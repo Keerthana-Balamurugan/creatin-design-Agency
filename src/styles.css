@@ -3,8 +3,8 @@
 @import "tw-animate-css";
 
 @font-face {
-  font-family: "Grobold";
-  src: url("/fonts/GROBOLD.ttf") format("truetype");
+  font-family: "blackrush";
+  src: url("/src/assets/fonts/blackrush.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
