@@ -18,7 +18,7 @@ export function Hero() {
           transition={{ delay: 0.2, duration: 0.8 }}
           className="flex flex-col items-start gap-4 mb-8"
         >
-          <img src={logoImg} alt="Creatin Logo" className="h-12 md:h-16 w-auto object-contain" />
+          <img src={logoImg} alt="Creatin Logo" className="h-20 md:h-28 w-auto object-contain" />
           <div className="flex items-center gap-3">
             <span className="w-9 h-px bg-beige" />
             <span className="text-grobold text-xs uppercase tracking-widest text-bold-foreground">
