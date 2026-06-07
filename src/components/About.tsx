@@ -1,7 +1,29 @@
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+import { useState } from "react";
 import aboutImg from "../assets/About us.jpg";
 
 export function About() {
+  const [activeFaq, setActiveFaq] = useState<number | null>(null);
+  const [isTestimonialOpen, setIsTestimonialOpen] = useState(false);
+
+  const faqs = [
+    {
+      question: "What is your typical project timeline?",
+      answer:
+        "Most branding and bespoke web systems take between 4 to 8 weeks. We focus on depth and detail rather than speed.",
+    },
+    {
+      question: "Do you collaborate with international clients?",
+      answer:
+        "Yes, we work with ambitious partners globally, utilizing seamless digital workflows to co-create from anywhere.",
+    },
+    {
+      question: "What is the process for starting a project?",
+      answer:
+        "We begin with a deep-dive strategy session, transition into custom UX/UI prototyping, and deliver with high-fidelity development.",
+    },
+  ];
+
   const stats = [
     { value: "50+", label: "Projects Launched" },
     { value: "15+", label: "Core Disciplines" },
@@ -77,6 +99,73 @@ export function About() {
                 </div>
               ))}
             </div>
+
+            {/* FAQ Accordion Section */}
+            <div className="pt-8 border-t border-border/40 space-y-4">
+              <h3 className="font-mono text-xs uppercase tracking-widest text-muted-foreground mb-2">
+                ( Frequently Asked Questions )
+              </h3>
+              <div className="space-y-1">
+                {faqs.map((faq, index) => (
+                  <div key={index} className="border-b border-border/20 last:border-0 pb-3">
+                    <button
+                      type="button"
+                      onClick={() => setActiveFaq(activeFaq === index ? null : index)}
+                      className="flex items-center justify-between w-full text-left py-2 font-display text-xl md:text-2xl text-white hover:text-beige transition-colors duration-200 cursor-pointer focus:outline-none"
+                    >
+                      <span>{faq.question}</span>
+                      <motion.span
+                        animate={{ rotate: activeFaq === index ? 45 : 0 }}
+                        className="text-beige font-mono text-sm ml-4"
+                      >
+                        ✶
+                      </motion.span>
+                    </button>
+                    <AnimatePresence initial={false}>
+                      {activeFaq === index && (
+                        <motion.div
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: "auto", opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
+                          transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                          className="overflow-hidden"
+                        >
+                          <p className="pt-1 pb-2 text-sm text-muted-foreground leading-relaxed">
+                            {faq.answer}
+                          </p>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Client Testimonial Trigger Card */}
+            <div className="pt-4">
+              <button
+                type="button"
+                onClick={() => setIsTestimonialOpen(true)}
+                className="group flex items-center justify-between w-full p-4 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-beige/30 transition-all duration-300 cursor-pointer"
+              >
+                <div className="flex items-center gap-4">
+                  <div className="w-10 h-10 rounded-full bg-beige/15 flex items-center justify-center text-beige text-lg font-mono">
+                    ★
+                  </div>
+                  <div className="text-left">
+                    <p className="font-mono text-[9px] uppercase tracking-widest text-muted-foreground">
+                      Client Success
+                    </p>
+                    <h4 className="font-display text-lg text-white font-medium group-hover:text-beige transition-colors">
+                      Read Client Testimonial
+                    </h4>
+                  </div>
+                </div>
+                <span className="w-8 h-8 rounded-full bg-beige text-primary-foreground flex items-center justify-center font-mono text-sm transition-transform group-hover:translate-x-1 duration-300">
+                  →
+                </span>
+              </button>
+            </div>
           </motion.div>
 
           {/* Right Side: Description and Pillars */}
@@ -133,6 +222,65 @@ export function About() {
           </div>
         </div>
       </div>
+
+      {/* Testimonial Pop-up Modal */}
+      <AnimatePresence>
+        {isTestimonialOpen && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+            {/* Backdrop */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setIsTestimonialOpen(false)}
+              className="absolute inset-0 bg-black/80 backdrop-blur-md"
+            />
+
+            {/* Modal Dialog Box */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.95, y: 20 }}
+              transition={{ type: "spring", duration: 0.5 }}
+              className="relative bg-card border border-border rounded-2xl p-8 md:p-12 max-w-lg w-full overflow-hidden shadow-2xl z-10"
+            >
+              {/* Elegant ambient glow behind popup */}
+              <div className="absolute -top-20 -right-20 w-48 h-48 bg-beige/10 rounded-full blur-3xl" />
+
+              {/* Close Button */}
+              <button
+                type="button"
+                onClick={() => setIsTestimonialOpen(false)}
+                className="absolute top-6 right-6 text-muted-foreground hover:text-white transition-colors cursor-pointer font-mono text-xs uppercase tracking-wider"
+              >
+                [ Close ]
+              </button>
+
+              {/* Content */}
+              <div className="space-y-8 pt-4">
+                <span className="text-display text-7xl text-beige/30 block -mb-8 font-serif leading-none">
+                  “
+                </span>
+                <p className="text-display text-2xl md:text-3xl italic text-white/95 leading-relaxed font-light">
+                  Creatin transformed our digital presence from a standard landing page into an
+                  immersive luxury experience. Their attention to detail is unmatched.
+                </p>
+                <div className="flex items-center gap-4 pt-6 border-t border-border/40">
+                  <div className="w-12 h-12 rounded-full bg-beige/15 flex items-center justify-center text-beige font-display text-xl border border-beige/20 font-semibold">
+                    SJ
+                  </div>
+                  <div>
+                    <h4 className="font-display text-lg text-white font-medium">Sarah Jenkins</h4>
+                    <p className="font-mono text-[10px] uppercase tracking-wider text-muted-foreground">
+                      Design Director, Vespera
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
     </section>
   );
 }
