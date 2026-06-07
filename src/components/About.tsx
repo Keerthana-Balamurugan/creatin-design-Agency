@@ -64,12 +64,25 @@ export function About() {
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
             </div>
 
-            <p className="text-lg md:text-xl leading-relaxed text-gray-300 font-light max-w-2xl">
-              Creatin is a boutique creative design agency. We craft brand systems, digital
-              products, and fluid web experiences that make people pause, engage, and remember. We
-              believe that design is not just visual; it is functional art that drives emotion and
-              results.
-            </p>
+            <div className="space-y-6 text-gray-300 font-light max-w-2xl">
+              <p className="text-base md:text-lg leading-relaxed">
+                Creatin is a boutique digital agency dedicated to crafting iconic brands, immersive
+                digital experiences, and high-performing websites. We blend strategy, creativity,
+                and innovation to build distinctive brand identities that captivate audiences and
+                inspire lasting connections.
+              </p>
+              <p className="text-base md:text-lg leading-relaxed">
+                From sophisticated brand systems to seamless digital products and elegant web
+                experiences, every detail is designed with purpose and precision. We believe
+                exceptional design goes beyond aesthetics—it is a powerful fusion of storytelling,
+                technology, and human emotion that transforms businesses into unforgettable brands.
+              </p>
+              <p className="text-xl md:text-2xl leading-relaxed text-beige font-bershka pt-2">
+                For ambitious companies seeking distinction in a crowded digital landscape, we
+                create experiences that don't just attract attention—they leave a lasting
+                impression.
+              </p>
+            </div>
 
             {/* Stats Grid */}
             <div className="grid grid-cols-3 gap-6 pt-6 border-t border-border/40">

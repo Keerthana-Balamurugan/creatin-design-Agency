@@ -62,7 +62,14 @@
 }
 
 @utility font-blackrush {
-  font-family: var(--font-peach-script);
+  font-family: "blackrush", sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  line-height: 1.1;
+}
+
+@utility font-bershka {
+  font-family: "blackrush", sans-serif;
   font-weight: 400;
   letter-spacing: 0.01em;
   line-height: 1.1;
