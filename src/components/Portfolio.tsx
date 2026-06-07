@@ -52,7 +52,7 @@ export function Portfolio() {
               href="#"
               initial={{ opacity: 0, y: 60 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
+              viewport={{ once: true, margin: "-10px" }}
               transition={{ duration: 0.8, delay: (i % 3) * 0.1, ease: [0.22, 1, 0.36, 1] }}
               className={`group relative overflow-hidden rounded-2xl bg-card ${w.span}`}
             >
