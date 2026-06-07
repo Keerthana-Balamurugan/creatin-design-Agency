@@ -39,8 +39,8 @@ export function About() {
               ( Who we are )
             </div>
             <h2 className="text-display text-6xl md:text-8xl max-w-4xl">
-              We are a studio built
-              <span className="italic text-beige"> for the bold.</span>
+              Where luxury
+              <span className="italic text-beige"> meets digital innovation.</span>
             </h2>
           </div>
         </div>
