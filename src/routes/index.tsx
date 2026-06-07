@@ -10,13 +10,13 @@ import { Footer } from "@/components/Footer";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Weboin Technologies — Creative Design Studio" },
+      { title: "Creatin — Creative Design Studio" },
       {
         name: "description",
         content:
-          "Weboin Technologies is a creative design studio crafting brand systems, digital products, and interfaces that make people pause.",
+          "Creatin is a creative design studio crafting brand systems, digital products, and interfaces that make people pause.",
       },
-      { property: "og:title", content: "Weboin Technologies — Creative Design Studio" },
+      { property: "og:title", content: "Creatin — Creative Design Studio" },
       {
         property: "og:description",
         content: "Brand, product, UI/UX and digital marketing. Made with intent.",
