@@ -47,13 +47,13 @@ export function About() {
 
         {/* Content Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
-          {/* Left Side: Image and Mission */}
+          {/* Left Side: Image and Stats */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="lg:col-span-6 space-y-8"
+            className="lg:col-span-6 space-y-8 lg:sticky lg:top-24"
           >
             <div className="relative aspect-[16/10] overflow-hidden rounded-lg group border border-border">
               <img
@@ -62,26 +62,6 @@ export function About() {
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
-            </div>
-
-            <div className="space-y-6 text-gray-300 font-light max-w-2xl">
-              <p className="text-base md:text-lg leading-relaxed">
-                Creatin is a boutique digital agency dedicated to crafting iconic brands, immersive
-                digital experiences, and high-performing websites. We blend strategy, creativity,
-                and innovation to build distinctive brand identities that captivate audiences and
-                inspire lasting connections.
-              </p>
-              <p className="text-base md:text-lg leading-relaxed">
-                From sophisticated brand systems to seamless digital products and elegant web
-                experiences, every detail is designed with purpose and precision. We believe
-                exceptional design goes beyond aesthetics—it is a powerful fusion of storytelling,
-                technology, and human emotion that transforms businesses into unforgettable brands.
-              </p>
-              <p className="text-xl md:text-2xl leading-relaxed text-beige font-bershka pt-2">
-                For ambitious companies seeking distinction in a crowded digital landscape, we
-                create experiences that don't just attract attention—they leave a lasting
-                impression.
-              </p>
             </div>
 
             {/* Stats Grid */}
@@ -99,28 +79,57 @@ export function About() {
             </div>
           </motion.div>
 
-          {/* Right Side: Pillars */}
+          {/* Right Side: Description and Pillars */}
           <div className="lg:col-span-6 space-y-12">
-            {pillars.map((pillar, i) => (
-              <motion.div
-                key={pillar.no}
-                initial={{ opacity: 0, x: 30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8, delay: i * 0.1 }}
-                className="flex gap-6 md:gap-8 items-start border-b border-border/30 pb-8 last:border-0"
-              >
-                <span className="font-mono text-xs text-beige tracking-widest pt-1">
-                  {pillar.no}.
-                </span>
-                <div className="space-y-3">
-                  <h3 className="text-display text-3xl md:text-4xl text-white">{pillar.title}</h3>
-                  <p className="text-sm md:text-base leading-relaxed text-muted-foreground">
-                    {pillar.desc}
-                  </p>
-                </div>
-              </motion.div>
-            ))}
+            {/* Description Text */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="space-y-6 text-gray-200 font-display text-2xl md:text-3xl leading-relaxed text-left md:text-justify"
+            >
+              <p>
+                Creatin is a boutique digital agency dedicated to crafting iconic brands, immersive
+                digital experiences, and high-performing websites. We blend strategy, creativity,
+                and innovation to build distinctive brand identities that captivate audiences and
+                inspire lasting connections.
+              </p>
+              <p className="italic text-beige">
+                From sophisticated brand systems to seamless digital products and elegant web
+                experiences, every detail is designed with purpose and precision. We believe
+                exceptional design goes beyond aesthetics—it is a powerful fusion of storytelling,
+                technology, and human emotion that transforms businesses into unforgettable brands.
+              </p>
+              <p className="text-2xl md:text-3xl leading-relaxed font-bershka text-white/90 pt-4 text-left">
+                For ambitious companies seeking distinction in a crowded digital landscape, we
+                create experiences that don't just attract attention—they leave a lasting
+                impression.
+              </p>
+            </motion.div>
+
+            <div className="border-t border-border/40 pt-10 space-y-12">
+              {pillars.map((pillar, i) => (
+                <motion.div
+                  key={pillar.no}
+                  initial={{ opacity: 0, x: 30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8, delay: i * 0.1 }}
+                  className="flex gap-6 md:gap-8 items-start border-b border-border/30 pb-8 last:border-0"
+                >
+                  <span className="font-mono text-xs text-beige tracking-widest pt-1">
+                    {pillar.no}.
+                  </span>
+                  <div className="space-y-3">
+                    <h3 className="text-display text-3xl md:text-4xl text-white">{pillar.title}</h3>
+                    <p className="text-sm md:text-base leading-relaxed text-muted-foreground">
+                      {pillar.desc}
+                    </p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
