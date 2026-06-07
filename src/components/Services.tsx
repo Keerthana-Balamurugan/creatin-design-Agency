@@ -39,10 +39,7 @@ export function Services() {
   const [hovered, setHovered] = useState<number | null>(null);
 
   return (
-    <section
-      id="services"
-      className="relative py-32 px-6 md:px-12 overflow-hidden"
-    >
+    <section id="services" className="relative py-32 px-6 md:px-12 overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-20">
           <div>
@@ -79,11 +76,7 @@ export function Services() {
                   transition={{ duration: 0.5 }}
                   className="absolute inset-0 z-0"
                 >
-                  <img
-                    src={s.image}
-                    alt={s.title}
-                    className="w-full h-full object-cover"
-                  />
+                  <img src={s.image} alt={s.title} className="w-full h-full object-cover" />
 
                   <div className="absolute inset-0 bg-black/60" />
                 </motion.div>
@@ -91,9 +84,7 @@ export function Services() {
 
               <div className="relative z-10">
                 <div className="flex items-start justify-between mb-12">
-                  <span className="font-mono text-xs text-muted-foreground">
-                    ({s.no})
-                  </span>
+                  <span className="font-mono text-xs text-muted-foreground">({s.no})</span>
 
                   <span className="w-10 h-10 rounded-full border border-border flex items-center justify-center group-hover:rotate-45 transition-transform duration-300">
                     ↗
@@ -101,13 +92,9 @@ export function Services() {
                 </div>
 
                 {/* OLD FONT PRESERVED */}
-                <h3 className="text-display text-5xl md:text-6xl mb-6 text-white">
-                  {s.title}
-                </h3>
+                <h3 className="text-display text-5xl md:text-6xl mb-6 text-white">{s.title}</h3>
 
-                <p className="max-w-md mb-8 leading-relaxed text-gray-200">
-                  {s.desc}
-                </p>
+                <p className="max-w-md mb-8 leading-relaxed text-gray-200">{s.desc}</p>
 
                 <div className="flex flex-wrap gap-2">
                   {s.tags.map((tag) => (

@@ -7,8 +7,20 @@ import w5 from "@/assets/work-5.jpg";
 import w6 from "@/assets/work-6.jpg";
 
 const works = [
-  { img: w1, title: "Pachy Type Foundry", cat: "Branding · Typography", year: "2025", span: "md:col-span-2" },
-  { img: w2, title: "Cretalise Fragrance", cat: "Packaging · E-com", year: "2024", span: "md:col-span-1" },
+  {
+    img: w1,
+    title: "Pachy Type Foundry",
+    cat: "Branding · Typography",
+    year: "2025",
+    span: "md:col-span-2",
+  },
+  {
+    img: w2,
+    title: "Cretalise Fragrance",
+    cat: "Packaging · E-com",
+    year: "2024",
+    span: "md:col-span-1",
+  },
   { img: w3, title: "Macet Studio", cat: "Identity System", year: "2024", span: "" },
   { img: w4, title: "Aurora Mobile", cat: "Product Design", year: "2025", span: "" },
   { img: w5, title: "Brutal Archive", cat: "Editorial · Web", year: "2024", span: "" },

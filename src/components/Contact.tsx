@@ -42,9 +42,7 @@ export function Contact() {
           className="w-full bg-transparent text-2xl md:text-3xl text-display outline-none placeholder:text-muted-foreground/40"
         />
       )}
-      {errors[key] && (
-        <p className="mt-2 text-xs font-mono text-ember">{errors[key]}</p>
-      )}
+      {errors[key] && <p className="mt-2 text-xs font-mono text-ember">{errors[key]}</p>}
     </div>
   );
 
@@ -64,7 +62,8 @@ export function Contact() {
             ⟶ Start a project
           </div>
           <h2 className="text-display text-6xl md:text-[9rem] leading-[0.9] mb-16">
-            Let's make<br />
+            Let's make
+            <br />
             <span className="italic text-beige">something loud.</span>
           </h2>
         </motion.div>

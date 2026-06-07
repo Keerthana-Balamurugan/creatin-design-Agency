@@ -42,8 +42,8 @@ export function Hero() {
             transition={{ delay: 1.2, duration: 0.8 }}
             className="font-sans text-bold`-foreground text-base md:text-lg leading-relaxed"
           >
-            We craft brand systems, digital products, and the rare interfaces 
-            that make people pause, lean in, and remember.
+            We craft brand systems, digital products, and the rare interfaces that make people
+            pause, lean in, and remember.
           </motion.p>
 
           <motion.a
