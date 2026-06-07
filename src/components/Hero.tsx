@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import logoImg from "../assets/Creatin logo.png";
 
 const words = ["Crafting", "Timeless", "Digital", "Experiences"];
 
@@ -15,12 +16,15 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.8 }}
-          className="flex items-center gap-3 mb-8"
+          className="flex flex-col items-start gap-4 mb-8"
         >
-          <span className="w-9 h-px bg-beige" />
-          <span className="text-grobold text-xs uppercase tracking-widest text-bold-foreground">
-            Creative Design Studio
-          </span>
+          <img src={logoImg} alt="Creatin Logo" className="h-12 md:h-16 w-auto object-contain" />
+          <div className="flex items-center gap-3">
+            <span className="w-9 h-px bg-beige" />
+            <span className="text-grobold text-xs uppercase tracking-widest text-bold-foreground">
+              Creative Design Studio
+            </span>
+          </div>
         </motion.div>
 
         <h1 className="text-display text-[9vw] md:text-[5.5vw] leading-[1.1] text-foreground">
