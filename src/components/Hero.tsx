@@ -4,7 +4,10 @@ const words = ["Crafting", "Timeless", "Digital", "Experiences"];
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen w-full overflow-hidden flex flex-col justify-end pb-16 px-6 md:px-12">
+    <section
+      id="home"
+      className="relative min-h-screen w-full overflow-hidden flex flex-col justify-end pb-16 px-6 md:px-12"
+    >
       <div className="absolute inset-0 bg-gradient-to-t from-background via-crimson/40 to-ink/60" />
 
       <div className="relative z-10 max-w-7xl mx-auto w-full">

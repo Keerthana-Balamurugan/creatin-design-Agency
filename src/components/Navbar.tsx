@@ -16,6 +16,12 @@ export function Navbar() {
         CREATIN
       </a>
       <nav className="hidden md:flex items-center gap-10 text-beige font-mono text-xs uppercase tracking-widest">
+        <a href="#home" className="hover:text-beige transition-colors">
+          Home
+        </a>
+        <a href="#about" className="hover:text-beige transition-colors">
+          About
+        </a>
         <a href="#services" className="hover:text-beige transition-colors">
           Services
         </a>
