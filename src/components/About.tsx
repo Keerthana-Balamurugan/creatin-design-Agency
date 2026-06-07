@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import aboutImg from "../assets/hero.jpg";
+import aboutImg from "../assets/About us.jpg";
 
 export function About() {
   const stats = [
